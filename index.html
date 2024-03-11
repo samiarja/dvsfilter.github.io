@@ -7,21 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dvsfilter</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="top-title">
-        <h1>
+        <h1 style="font-size: 52px; font-family: 'Google Sans', sans-serif;">
             A General Solution to Information Removal for Event Cameras
         </h1>
+        
         <p align="center">
             <img src="images/hot_pixel_package_logo2.png" width="300" height="200">
           </p>
     </div>
 
+    <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Slide left to remove hot pixels</h2>
+
     <div class="mainSection">
 
+        
         <div id="one" class="bal-container">
             <div class="bal-after">
                 <img src="images/star1_after.png">
@@ -393,9 +398,199 @@
     </div>
 
 
+    <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Comparison with existing approaches (Which one is better?) - Click the button on the left</h2>
+
+
+
+
+    <div class="row" data-row-id="row1">
+        <button class="button" onclick="switchImages('row1')">Toggle hot pixels</button>
+        <div class="images-container">
+          <div class="image-container">
+            <div class="image-title">Timo</div>
+            <img src="images/star1_before_timo.png" data-alt-src="images/star1_after_timo.png" alt="Image 2">
+          </div>
+          <div class="image-container">
+            <div class="image-title">Cedric</div>
+            <img src="images/star1_before_cedric.png" data-alt-src="images/star1_after_cedric.png" alt="Image 3">
+          </div>
+          <div class="image-container">
+            <div class="image-title">Saeed</div>
+            <img src="images/star1_before_saeed.png" data-alt-src="images/star1_after_saeed.png" alt="Image 4">
+          </div>
+          <div class="image-container">
+            <div class="image-title" style="color: red; font-weight: bold;">Ours</div>
+            <img src="images/star1_before.png" data-alt-src="images/star1_after.png" alt="Image 5">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" data-row-id="row2">
+        <button class="button" onclick="switchImages('row2')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star2_before_timo.png" data-alt-src="images/star2_after_timo.png" alt="Image 2">
+          <img src="images/star2_before_cedric.png" data-alt-src="images/star2_after_cedric.png" alt="Image 3">
+          <img src="images/star2_before_saeed.png" data-alt-src="images/star2_after_saeed.png" alt="Image 4">
+          <img src="images/star2_before.png" data-alt-src="images/star2_after.png" alt="Image 5">
+        </div>
+      </div>
+
+
+      <div class="row" data-row-id="row3">
+        <button class="button" onclick="switchImages('row3')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star3_before_timo.png" data-alt-src="images/star3_after_timo.png" alt="Image 2">
+          <img src="images/star3_before_cedric.png" data-alt-src="images/star3_after_cedric.png" alt="Image 3">
+          <img src="images/star3_before_saeed.png" data-alt-src="images/star3_after_saeed.png" alt="Image 4">
+          <img src="images/star3_before.png" data-alt-src="images/star3_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row4">
+        <button class="button" onclick="switchImages('row4')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star4_before_timo.png" data-alt-src="images/star4_after_timo.png" alt="Image 2">
+          <img src="images/star4_before_cedric.png" data-alt-src="images/star4_after_cedric.png" alt="Image 3">
+          <img src="images/star4_before_saeed.png" data-alt-src="images/star4_after_saeed.png" alt="Image 4">
+          <img src="images/star4_before.png" data-alt-src="images/star4_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row5">
+        <button class="button" onclick="switchImages('row5')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star5_before_timo.png" data-alt-src="images/star5_after_timo.png" alt="Image 2">
+          <img src="images/star5_before_cedric.png" data-alt-src="images/star5_after_cedric.png" alt="Image 3">
+          <img src="images/star5_before_saeed.png" data-alt-src="images/star5_after_saeed.png" alt="Image 4">
+          <img src="images/star5_before.png" data-alt-src="images/star5_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row6">
+        <button class="button" onclick="switchImages('row6')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star6_before_timo.png" data-alt-src="images/star6_after_timo.png" alt="Image 2">
+          <img src="images/star6_before_cedric.png" data-alt-src="images/star6_after_cedric.png" alt="Image 3">
+          <img src="images/star6_before_saeed.png" data-alt-src="images/star6_after_saeed.png" alt="Image 4">
+          <img src="images/star6_before.png" data-alt-src="images/star6_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row7">
+        <button class="button" onclick="switchImages('row7')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star7_before_timo.png" data-alt-src="images/star7_after_timo.png" alt="Image 2">
+          <img src="images/star7_before_cedric.png" data-alt-src="images/star7_after_cedric.png" alt="Image 3">
+          <img src="images/star7_before_saeed.png" data-alt-src="images/star7_after_saeed.png" alt="Image 4">
+          <img src="images/star7_before.png" data-alt-src="images/star7_after.png" alt="Image 5">
+        </div>
+      </div>
+
+
+      <div class="row" data-row-id="row8">
+        <button class="button" onclick="switchImages('row8')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star8_before_timo.png" data-alt-src="images/star8_after_timo.png" alt="Image 2">
+          <img src="images/star8_before_cedric.png" data-alt-src="images/star8_after_cedric.png" alt="Image 3">
+          <img src="images/star8_before_saeed.png" data-alt-src="images/star8_after_saeed.png" alt="Image 4">
+          <img src="images/star8_before.png" data-alt-src="images/star8_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row9">
+        <button class="button" onclick="switchImages('row9')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star9_before_timo.png" data-alt-src="images/star9_after_timo.png" alt="Image 2">
+          <img src="images/star9_before_cedric.png" data-alt-src="images/star9_after_cedric.png" alt="Image 3">
+          <img src="images/star9_before_saeed.png" data-alt-src="images/star9_after_saeed.png" alt="Image 4">
+          <img src="images/star9_before.png" data-alt-src="images/star9_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row10">
+        <button class="button" onclick="switchImages('row10')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star10_before_timo.png" data-alt-src="images/star10_after_timo.png" alt="Image 2">
+          <img src="images/star10_before_cedric.png" data-alt-src="images/star10_after_cedric.png" alt="Image 3">
+          <img src="images/star10_before_saeed.png" data-alt-src="images/star10_after_saeed.png" alt="Image 4">
+          <img src="images/star10_before.png" data-alt-src="images/star10_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row11">
+        <button class="button" onclick="switchImages('row11')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star11_before_timo.png" data-alt-src="images/star11_after_timo.png" alt="Image 2">
+          <img src="images/star11_before_cedric.png" data-alt-src="images/star11_after_cedric.png" alt="Image 3">
+          <img src="images/star11_before_saeed.png" data-alt-src="images/star11_after_saeed.png" alt="Image 4">
+          <img src="images/star11_before.png" data-alt-src="images/star11_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row12">
+        <button class="button" onclick="switchImages('row12')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star12_before_timo.png" data-alt-src="images/star12_after_timo.png" alt="Image 2">
+          <img src="images/star12_before_cedric.png" data-alt-src="images/star12_after_cedric.png" alt="Image 3">
+          <img src="images/star12_before_saeed.png" data-alt-src="images/star12_after_saeed.png" alt="Image 4">
+          <img src="images/star12_before.png" data-alt-src="images/star12_after.png" alt="Image 5">
+        </div>
+      </div>
+
+
+      <div class="row" data-row-id="row13">
+        <button class="button" onclick="switchImages('row13')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star13_before_timo.png" data-alt-src="images/star13_after_timo.png" alt="Image 2">
+          <img src="images/star13_before_cedric.png" data-alt-src="images/star13_after_cedric.png" alt="Image 3">
+          <img src="images/star13_before_saeed.png" data-alt-src="images/star13_after_saeed.png" alt="Image 4">
+          <img src="images/star13_before.png" data-alt-src="images/star13_after.png" alt="Image 5">
+        </div>
+      </div>
+
+      <div class="row" data-row-id="row14">
+        <button class="button" onclick="switchImages('row14')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star14_before_timo.png" data-alt-src="images/star14_after_timo.png" alt="Image 2">
+          <img src="images/star14_before_cedric.png" data-alt-src="images/star14_after_cedric.png" alt="Image 3">
+          <img src="images/star14_before_saeed.png" data-alt-src="images/star14_after_saeed.png" alt="Image 4">
+          <img src="images/star14_before.png" data-alt-src="images/star14_after.png" alt="Image 5">
+        </div>
+      </div>
+
+
+      <div class="row" data-row-id="row15">
+        <button class="button" onclick="switchImages('row15')">Toggle hot pixels</button>
+        <div class="images-container">
+          <img src="images/star15_before_timo.png" data-alt-src="images/star15_after_timo.png" alt="Image 2">
+          <img src="images/star15_before_cedric.png" data-alt-src="images/star15_after_cedric.png" alt="Image 3">
+          <img src="images/star15_before_saeed.png" data-alt-src="images/star15_after_saeed.png" alt="Image 4">
+          <img src="images/star15_before.png" data-alt-src="images/star15_after.png" alt="Image 5">
+        </div>
+      </div>
+
+
+
     <script src="js/script.js"></script>
 
     <script>
+
+        function switchImages(rowId) {
+            // This selector targets images directly within an .images-container,
+            // whether or not they're in an .image-container div.
+            const images = document.querySelectorAll(`.row[data-row-id="${rowId}"] .images-container img`);
+            
+            images.forEach(img => {
+                let currentSrc = img.getAttribute('src');
+                let altSrc = img.getAttribute('data-alt-src');
+                
+                img.setAttribute('src', altSrc);
+                img.setAttribute('data-alt-src', currentSrc);
+            });
+        }
+
+
         new BeforeAfter({
             id: '#one'
         });
@@ -441,6 +636,8 @@
         new BeforeAfter({
             id: '#fifteen'
         });
+
+        
     </script>
 
 </body>

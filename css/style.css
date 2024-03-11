@@ -277,9 +277,47 @@
     content: " ";
     display: block;
     width: 2px;
-    background: #fff;
+    background: #0a0a0a;
     height: 9999px;
     position: absolute;
     left: 50%;
     margin-left: -1.5px;
+}
+
+.row {
+    position: relative;
+    margin-bottom: 5px; /* Increased bottom margin for better separation */
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  .button {
+    transform: rotate(-90deg); /* Rotate button */
+    font-weight: bold;
+    margin-right: -40px; /* Space between button and images */
+    cursor: pointer;
+  }
+  
+  .images-container {
+    display: flex;
+    gap: 5px; /* Space between images */
+  }
+  
+  .images-container img {
+    width: 445px; /* Adjust image width as needed */
+    display: block; /* Adjusted to show the images by default */
+  }
+  
+  .image-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
 }
