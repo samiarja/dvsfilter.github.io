@@ -321,3 +321,19 @@
 .publication-title {
     font-family: 'Google Sans', sans-serif;
 }
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between logo containers */
+    margin-top: 20px;
+}
+
+.logo-wrapper {
+    text-align: center;
+}
+
+.logo-description {
+    font-size: 16px; /* Adjust based on your preference */
+    margin-top: 10px;
+}
