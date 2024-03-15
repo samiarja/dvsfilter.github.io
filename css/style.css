@@ -337,3 +337,73 @@
     font-size: 16px; /* Adjust based on your preference */
     margin-top: 10px;
 }
+
+.methods button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#timo {
+    background-color: #FFC107; /* Amber */
+    color: #000;
+}
+
+#cedric {
+    background-color: #2196F3; /* Blue */
+    color: #fff;
+}
+
+#alex1 {
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+}
+
+#alex2 {
+    background-color: #4cafaf; /* Green */
+    color: #fff;
+}
+
+#saeed {
+    background-color: #F44336; /* Red */
+    color: #fff;
+}
+
+#sami {
+    background-color: #9C27B0; /* Purple */
+    color: #fff;
+}
+#show-hot-pixels {
+    background-color: #000; /* Black */
+    color: #fff; /* White */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.active-button {
+    box-shadow: 0px 0px 15px rgba(255, 1, 1, 0.6); /* Strong shadow effect */
+    transform: scale(1.25); /* Optional: slight enlargement to emphasize the active state */
+}
+.metrics span {
+    display: inline-block;
+    margin-right: 15px;
+    color: #000; /* Default color */
+}
+#metricsTable {
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#metricsTable th, #metricsTable td {
+    padding: 5px;
+    text-align: center;
+}
+
+.method-color {
+    /* This class will be added dynamically to color the table */
+}

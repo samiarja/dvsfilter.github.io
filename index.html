@@ -23,18 +23,105 @@
     </div>
 
 
-    <div class="top-title">
+    <!-- <div class="top-title">
         
         <p align="center">
             <img src="images/teaser.png" width="1700" height="600">
           </p>
+    </div> -->
+
+    <h2 style="text-align: center; margin-top: 20px; font-size: 44px;">Select a method</h2>
+
+
+    <div class="methods" style="text-align:center; margin-bottom: 20px;">
+        <button id="timo" onclick="changeImage('Timo')">Timo</button>
+        <button id="cedric" onclick="changeImage('Cedric')">Cedric</button>
+        <button id="alex1" onclick="changeImage('Alex1')">Alex 1</button>
+        <button id="alex2" onclick="changeImage('Alex2')">Alex 2</button>
+        <button id="saeed" onclick="changeImage('Saeed')">Saeed</button>
+        <button id="sami" onclick="changeImage('Ours')">Sami</button>
     </div>
 
-    <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Slide left to remove hot pixels</h2>
+    <div class="show-hot-pixels" style="text-align:center; margin-bottom: 20px;">
+        <button id="show-hot-pixels" onclick="showHotPixels()">Colorize Hot Pixels</button>
+    </div>
+
+    <div style="text-align: left;">
+        <table id="metricsTable" border="1">
+            <tr>
+                <th>Metrics</th>
+                <th>Star1</th>
+                <th>Star2</th>
+                <th>Star3</th>
+                <th>Star5</th>
+                <th>Star6</th>
+                <th>star7</th>
+                <th>Star8</th>
+                <th>Star9</th>
+                <th>Star10</th>
+                <th>Star11</th>
+                <th>Star12</th>
+                <th>Star13</th>
+                <th>Star14</th>
+                <th>Star15</th>
+            </tr>
+            <tr>
+                <td>Detected hot pixels</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+            <tr>
+                <td>% of Hot pixels</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+            <tr>
+                <td>% of remaining events</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+        </table>
+    </div>
+    
+    
 
     <div class="mainSection">
-
-        
         <div id="one" class="bal-container">
             <div class="bal-after">
                 <img src="images/star1_after.png">
@@ -56,6 +143,8 @@
                 <span class=" handle-left-arrow"></span>
                 <span class="handle-right-arrow"></span>
             </div>
+
+            
 
         </div>
 
@@ -158,14 +247,14 @@
 
         <div id="six" class="bal-container">
             <div class="bal-after">
-                <img src="images/star6_after.png">
+                <img src="images/star6_after_ours.png">
                 <div class="bal-afterPosition afterLabel">
                     After
                 </div>
             </div>
             <div class="bal-before">
                 <div class="bal-before-inset">
-                    <img src="images/star6_before.png">
+                    <img src="images/star6_before_ours.png">
                     <div class="bal-beforePosition beforeLabel">
                         Before
                     </div>
@@ -406,7 +495,7 @@
     </div>
 
 
-    <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Comparison with existing approaches (Which one is better?) - Click the button on the left</h2>
+    <!-- <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Comparison with existing approaches (Which one is better?) - Click the button on the left</h2>
 
 
 
@@ -599,7 +688,7 @@
             </a>
             <div class="logo-description">C++</div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -667,6 +756,129 @@
         new BeforeAfter({
             id: '#fifteen'
         });
+
+        let lastMethodName = ''; // Store the last selected method name
+        let showingHotPixels = false; // Track whether we're showing hot pixels
+
+        function changeImage(methodName) {
+            lastMethodName = methodName; // Update the last selected method name
+            showingHotPixels = false; // Reset hot pixel toggle when changing method
+            // Ensure we're correctly handling the method name for file naming
+            const methodNameWithLowercase = methodName.charAt(0).toLowerCase() + methodName.slice(1);
+            
+            // Update the images
+            const baseImagePath = 'images/';
+            const afterImages = document.querySelectorAll('.bal-after img');
+            afterImages.forEach((img, index) => {
+                // Construct the new image source path with the 'after' included
+                const newImageSource = `${baseImagePath}star${index + 1}_after_${methodNameWithLowercase}.png`;
+                img.src = newImageSource;
+            });
+
+            // Update button states
+            // Remove active class from all method buttons
+            document.querySelectorAll('.methods button').forEach(button => {
+                button.classList.remove('active-button');
+            });
+
+            // Special handling to add the active class correctly
+            if (methodName === 'Alex') {
+                document.getElementById('alex1').classList.add('active-button');
+                document.getElementById('alex2').classList.add('active-button');
+            } else if (methodName === 'Ours') {
+                document.getElementById('sami').classList.add('active-button');
+            } else {
+                // Match the button ID with the method name directly for others
+                document.getElementById(methodName.toLowerCase()).classList.add('active-button');
+            }
+
+            const metrics = methodMetrics[methodName.toLowerCase()];
+            const table = document.getElementById('metricsTable');
+
+            // Assuming you have 15 columns for metrics excluding the header
+            for (let i = 1; i <= 15; i++) {
+                table.rows[1].cells[i].innerText = metrics.hotPixels[i - 1] || ''; // Update # Hot Pixels
+                table.rows[2].cells[i].innerText = metrics.hotPixelsPercent[i - 1] || ''; // Update % Hot Pixels
+                table.rows[3].cells[i].innerText = metrics.cleanedEvents[i - 1] || ''; // Update % Cleaned Events
+            }
+            
+
+            // Ensure the "Show Hot Pixels" button is not active
+            document.getElementById('show-hot-pixels').classList.remove('active-button');
+        }
+
+        // The showHotPixels and updateImages functions can remain the same, assuming they correctly handle the showing and hiding of hot pixels based on the lastMethodName and showingHotPixels state.
+
+        function showHotPixels() {
+            if (lastMethodName === '') return; // Do nothing if no method has been selected
+
+            showingHotPixels = !showingHotPixels; // Toggle the hot pixel state
+            updateImages(lastMethodName, showingHotPixels);
+
+            // Toggle active class on the "Show Hot Pixels" button
+            const hotPixelsButton = document.getElementById('show-hot-pixels');
+            if (showingHotPixels) {
+                hotPixelsButton.classList.add('active-button');
+            } else {
+                hotPixelsButton.classList.remove('active-button');
+            }
+        }
+
+        const methodMetrics = {
+            timo: {
+                hotPixels: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], // Array of # Hot Pixels for each "star", e.g., [100, 120, 110] for 15 stars
+                hotPixelsPercent: [1.042, 1.181, 0.728, 1.931, 3.563, 7.507, 4.485, 1.16, 1.029, 1.535, 2.483, 2.414, 5.885, 4.81, 5.59, 4.485], // Array of % Hot Pixels for each "star"
+                cleanedEvents: [98.958, 98.819, 99.272, 98.069, 96.437, 92.493, 95.515, 98.84, 98.971, 98.465, 97.517, 97.586, 94.115, 95.19, 94.41, 95.515], // Array of % Cleaned Events for each "star"
+            },
+            cedric: {
+                hotPixels: [8, 8, 12, 1167, 651, 314, 523, 9, 213, 219, 1243, 1003, 409, 486, 410, 523],
+                hotPixelsPercent: [0.946, 1.085, 0.682, 30.427, 57.462, 61.872, 57.635, 1.07, 3.31, 5.139, 51.062, 54.889, 60.358, 55.561, 58.807, 57.635],
+                cleanedEvents: [99.054, 98.915, 99.318, 69.573, 42.538, 38.128, 42.365, 98.93, 96.69, 94.861, 48.938, 45.111, 39.642, 44.439, 41.193, 42.365],
+            },
+            alex1: {
+                hotPixels: [79, 86, 92, 90, 92, 92, 91, 91, 92, 92, 92, 92, 92, 92, 92, 91],
+                hotPixelsPercent: [1.359, 1.473, 1.065, 4.203, 12.833, 26.986, 15.686, 1.532, 1.985, 2.993, 6.869, 8.014, 20.897, 16.907, 20.156, 15.686],
+                cleanedEvents: [98.641, 98.527, 98.935, 95.797, 87.167, 73.014, 84.314, 98.468, 98.015, 97.007, 93.131, 91.986, 79.103, 83.093, 79.844, 84.314],
+            },
+            alex2: {
+                hotPixels: [4007, 5490, 5323, 6194, 7039, 7230, 7214, 2846, 5798, 5988, 6460, 6769, 7084, 7123, 7091, 7214],
+                hotPixelsPercent: [2.641, 2.903, 1.93, 3.834, 2.375, 4.365, 2.568, 2.635, 2.287, 3.361, 3.597, 2.439, 3.413, 2.901, 3.082, 2.568],
+                cleanedEvents: [97.359, 97.097, 98.07, 96.166, 97.625, 95.635, 97.432, 97.365, 97.713, 96.639, 96.403, 97.561, 96.587, 97.099, 96.918, 97.432],
+            },
+            saeed: {
+                hotPixels: [46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 46],
+                hotPixelsPercent: [0.086, 0.088, 0.062, 0.111, 0.069, 0.645, 0.072, 0.09, 0.069, 1.198, 0.102, 0.072, 0.101, 0.953, 0.089, 0.072],
+                cleanedEvents: [99.914, 99.912, 99.938, 99.889, 99.931, 99.355, 99.928, 99.91, 99.931, 98.802, 99.898, 99.928, 99.899, 99.047, 99.911, 99.928],
+            },
+            ours: {
+                hotPixels: [6241, 9821, 2215, 8901, 1504, 1660, 4437, 3626, 9401, 9196, 7445, 5448, 4861, 4602, 4685, 4437],
+                hotPixelsPercent: [2.17, 2.393, 1.245, 3.302, 1.865, 2.824, 2.139, 2.119, 2.044, 2.902, 3.092, 1.962, 2.74, 2.331, 2.579, 2.139],
+                cleanedEvents: [97.83, 97.607, 98.755, 96.698, 98.135, 97.176, 97.861, 97.881, 97.956, 97.098, 96.908, 98.038, 97.26, 97.669, 97.421, 97.861],
+            },
+            };
+
+        function updateImages(methodName, hotPixels) {
+            const baseImagePath = 'images/';
+            const afterImages = document.querySelectorAll('.bal-before img'); // Target .bal-after for "after" images
+
+            afterImages.forEach((img, index) => {
+                let newImageSource;
+                const methodNameWithLowercase = methodName.charAt(0).toLowerCase() + methodName.slice(1);
+
+                if (hotPixels) {
+                    // If showing hot pixels, add "_hot_pixel" to the filename
+                    newImageSource = `${baseImagePath}star${index + 1}_before_${methodNameWithLowercase}_hot_pixel.png`;
+                } else {
+                    // Use the original method image without hot pixels
+                    newImageSource = `${baseImagePath}star${index + 1}_before.png`;
+                }
+                img.src = newImageSource;
+            });
+        }
+
+        window.onload = function() {
+            changeImage('Alex2'); // Or the first method you wish to display
+        };
 
         
     </script>
