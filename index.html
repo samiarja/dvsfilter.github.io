@@ -46,8 +46,12 @@
         <button id="show-hot-pixels" onclick="showHotPixels()">Colorize Hot Pixels</button>
     </div>
 
-    <div style="text-align: left;">
-        <table id="metricsTable" border="1">
+    
+    <div style="display: flex; justify-content: center; align-items: start;">
+        <!-- Existing Table -->
+        <div style="text-align: left; margin-right: 20px;">
+            <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Windy Star</h2>
+        <table id="metricsTable1" class="consistentTableStyle" border="1">
             <tr>
                 <th>Metrics</th>
                 <th>Star1</th>
@@ -66,7 +70,81 @@
                 <th>Star15</th>
             </tr>
             <tr>
-                <td>Detected hot pixels</td>
+                <td># of detected hot pixels</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+            <tr>
+                <td>% of Hot pixels</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+            <tr>
+                <td>% of remaining events</td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> <!-- Placeholder for Star15's value -->
+            </tr>
+        </table>
+
+    </div>
+    <div style="text-align: left;">
+        <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Regular Star</h2>
+        <table id="metricsTable2" class="consistentTableStyle" border="1">
+            <tr>
+                <th>Metrics</th>
+                <th>Star1</th>
+                <th>Star2</th>
+                <th>Star3</th>
+                <th>Star5</th>
+                <th>Star6</th>
+                <th>star7</th>
+                <th>Star8</th>
+                <th>Star9</th>
+                <th>Star10</th>
+                <th>Star11</th>
+                <th>Star12</th>
+                <th>Star13</th>
+                <th>Star14</th>
+                <th>Star15</th>
+            </tr>
+            <tr>
+                <td># of detected hot pixels</td>
                 <td></td> 
                 <td></td>
                 <td></td> 
@@ -118,9 +196,10 @@
             </tr>
         </table>
     </div>
+    </div>
     
     
-
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Windy stars visualization</h2>
     <div class="mainSection">
         <div id="one" class="bal-container">
             <div class="bal-after">
@@ -494,6 +573,92 @@
         </div>
     </div>
 
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Regular stars visualization</h2>
+    <div class="mainSection">
+        <div id="sixteen" class="bal-container">
+            <div class="bal-after">
+                <img src="images/star16_after.png">
+                <div class="bal-afterPosition afterLabel">
+                    After
+                </div>
+            </div>
+
+            <div class="bal-before">
+                <div class="bal-before-inset">
+                    <img src="images/star16_before.png">
+                    <div class="bal-beforePosition beforeLabel">
+                        Before
+                    </div>
+                </div>
+            </div>
+
+            <div class="bal-handle">
+                <span class=" handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+            </div>
+        </div>
+
+        <div id="seventeen" class="bal-container">
+            <div class="bal-after">
+                <img src="images/star17_after.png">
+                <div class="bal-afterPosition afterLabel">
+                    After
+                </div>
+            </div>
+
+            <div class="bal-before">
+                <div class="bal-before-inset">
+                    <img src="images/star17_before.png">
+                    <div class="bal-beforePosition beforeLabel">
+                        Before
+                    </div>
+                </div>
+            </div>
+
+            <div class="bal-handle">
+                <span class=" handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+            </div>
+        </div>
+
+        <div id="eighteen" class="bal-container">
+            <div class="bal-after">
+                <img src="images/star18_after.png">
+                <div class="bal-afterPosition afterLabel">
+                    After
+                </div>
+            </div>
+
+            <div class="bal-before">
+                <div class="bal-before-inset">
+                    <img src="images/star18_before.png">
+                    <div class="bal-beforePosition beforeLabel">
+                        Before
+                    </div>
+                </div>
+            </div>
+
+            <div class="bal-handle">
+                <span class=" handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Quantitative analysis (F1-score)</h2>
+
+
+
+
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Astrometry analysis</h2>
+
+
+
+
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Latency analysis</h2>
+
 
     <!-- <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Comparison with existing approaches (Which one is better?) - Click the button on the left</h2>
 
@@ -664,7 +829,7 @@
           <img src="images/star15_before_saeed.png" data-alt-src="images/star15_after_saeed.png" alt="Image 4">
           <img src="images/star15_before.png" data-alt-src="images/star15_after.png" alt="Image 5">
         </div>
-      </div>
+      </div> -->
 
 
       <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Available soon on:</h2>
@@ -688,7 +853,7 @@
             </a>
             <div class="logo-description">C++</div>
         </div>
-    </div> -->
+    </div>
 
 
 
@@ -756,6 +921,15 @@
         new BeforeAfter({
             id: '#fifteen'
         });
+        new BeforeAfter({
+            id: '#sixteen'
+        });
+        new BeforeAfter({
+            id: '#seventeen'
+        });
+        new BeforeAfter({
+            id: '#eighteen'
+        });
 
         let lastMethodName = ''; // Store the last selected method name
         let showingHotPixels = false; // Track whether we're showing hot pixels
@@ -792,17 +966,22 @@
                 document.getElementById(methodName.toLowerCase()).classList.add('active-button');
             }
 
-            const metrics = methodMetrics[methodName.toLowerCase()];
-            const table = document.getElementById('metricsTable');
+            const metrics1 = metricsTable1[methodName.toLowerCase()];
+            const metrics2 = metricsTable2[methodName.toLowerCase()]; // Assuming different data for the second table
+            const table1 = document.getElementById('metricsTable1');
+            const table2 = document.getElementById('metricsTable2');
 
-            // Assuming you have 15 columns for metrics excluding the header
             for (let i = 1; i <= 15; i++) {
-                table.rows[1].cells[i].innerText = metrics.hotPixels[i - 1] || ''; // Update # Hot Pixels
-                table.rows[2].cells[i].innerText = metrics.hotPixelsPercent[i - 1] || ''; // Update % Hot Pixels
-                table.rows[3].cells[i].innerText = metrics.cleanedEvents[i - 1] || ''; // Update % Cleaned Events
+                table1.rows[1].cells[i].innerText = metrics1.hotPixels[i - 1] || ''; // Update # Hot Pixels
+                table1.rows[2].cells[i].innerText = metrics1.hotPixelsPercent[i - 1] || ''; // Update % Hot Pixels
+                table1.rows[3].cells[i].innerText = metrics1.cleanedEvents[i - 1] || ''; // Update % Cleaned Events
+
+                table2.rows[1].cells[i].innerText = metrics2.hotPixels[i - 1] || ''; // Update # Hot Pixels
+                table2.rows[2].cells[i].innerText = metrics2.hotPixelsPercent[i - 1] || ''; // Update % Hot Pixels
+                table2.rows[3].cells[i].innerText = metrics2.cleanedEvents[i - 1] || ''; // Update % Cleaned Events
             }
             
-
+                
             // Ensure the "Show Hot Pixels" button is not active
             document.getElementById('show-hot-pixels').classList.remove('active-button');
         }
@@ -824,7 +1003,8 @@
             }
         }
 
-        const methodMetrics = {
+
+        const metricsTable1 = {
             timo: {
                 hotPixels: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], // Array of # Hot Pixels for each "star", e.g., [100, 120, 110] for 15 stars
                 hotPixelsPercent: [1.042, 1.181, 0.728, 1.931, 3.563, 7.507, 4.485, 1.16, 1.029, 1.535, 2.483, 2.414, 5.885, 4.81, 5.59, 4.485], // Array of % Hot Pixels for each "star"
@@ -857,6 +1037,41 @@
             },
             };
 
+
+            const metricsTable2 = {
+            timo: {
+                hotPixels: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // Simplified for clarity
+                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                cleanedEvents: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            },
+            cedric: {
+                hotPixels: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                hotPixelsPercent: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                cleanedEvents: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            },
+            alex1: {
+                hotPixels: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                cleanedEvents: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            },
+            alex2: {
+                hotPixels: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                hotPixelsPercent: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                cleanedEvents: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            },
+            saeed: {
+                hotPixels: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                hotPixelsPercent: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                cleanedEvents: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            },
+            ours: {
+                hotPixels: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                cleanedEvents: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            },
+        };
+
+
         function updateImages(methodName, hotPixels) {
             const baseImagePath = 'images/';
             const afterImages = document.querySelectorAll('.bal-before img'); // Target .bal-after for "after" images
@@ -877,7 +1092,7 @@
         }
 
         window.onload = function() {
-            changeImage('Alex2'); // Or the first method you wish to display
+            changeImage('Timo'); // Or the first method you wish to display
         };
 
         

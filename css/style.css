@@ -407,3 +407,8 @@
 .method-color {
     /* This class will be added dynamically to color the table */
 }
+.consistentTableStyle {
+    width: 900px; /* or any width you prefer */
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjust based on your layout */
+}
