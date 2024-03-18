@@ -652,6 +652,25 @@
 
 
 
+    <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Hot pixels similarity analysis (Select a method)</h2>
+    <div class="methods" style="text-align:center; margin-bottom: 20px;">
+        <button id="timo" onclick="changeHotPixelImages('Timo')">Timo</button>
+        <button id="cedric" onclick="changeHotPixelImages('Cedric')">Cedric</button>
+        <button id="alex1" onclick="changeHotPixelImages('Alex1')">Alex 1</button>
+        <button id="alex2" onclick="changeHotPixelImages('Alex2')">Alex 2</button>
+        <button id="saeed" onclick="changeHotPixelImages('Saeed')">Saeed</button>
+        <button id="sami" onclick="changeHotPixelImages('Ours')">Sami</button>
+    </div>
+
+
+    <div style="text-align: center; margin-bottom: 0px;">
+        <h2>Hot pixels map. It is the average across all the images from the windy recordings over the hot pixels only. This shows the most common hot pixels and their consistency overtime.</h2>
+    </div>
+    <div id="hotPixelRow1" class="imageRow"></div>
+    <div id="hotPixelRow2" class="imageRow" style="display: flex; justify-content: center; gap: 20px;"></div>
+
+
+
     <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Astrometry analysis</h2>
 
 
@@ -660,176 +679,7 @@
     <h2 style="text-align: center; margin-top: 20px; font-size: 24px;">Latency analysis</h2>
 
 
-    <!-- <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Comparison with existing approaches (Which one is better?) - Click the button on the left</h2>
-
-
-
-    <div class="row" data-row-id="row1">
-        <button class="button" onclick="switchImages('row1')">Toggle hot pixels</button>
-        <div class="images-container">
-          <div class="image-container">
-            <div class="image-title">Timo</div>
-            <img src="images/star1_before_timo.png" data-alt-src="images/star1_after_timo.png" alt="Image 2">
-          </div>
-          <div class="image-container">
-            <div class="image-title">Cedric</div>
-            <img src="images/star1_before_cedric.png" data-alt-src="images/star1_after_cedric.png" alt="Image 3">
-          </div>
-          <div class="image-container">
-            <div class="image-title">Saeed</div>
-            <img src="images/star1_before_saeed.png" data-alt-src="images/star1_after_saeed.png" alt="Image 4">
-          </div>
-          <div class="image-container">
-            <div class="image-title" style="color: red; font-weight: bold;">Ours</div>
-            <img src="images/star1_before.png" data-alt-src="images/star1_after.png" alt="Image 5">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row" data-row-id="row2">
-        <button class="button" onclick="switchImages('row2')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star2_before_timo.png" data-alt-src="images/star2_after_timo.png" alt="Image 2">
-          <img src="images/star2_before_cedric.png" data-alt-src="images/star2_after_cedric.png" alt="Image 3">
-          <img src="images/star2_before_saeed.png" data-alt-src="images/star2_after_saeed.png" alt="Image 4">
-          <img src="images/star2_before.png" data-alt-src="images/star2_after.png" alt="Image 5">
-        </div>
-      </div>
-
-
-      <div class="row" data-row-id="row3">
-        <button class="button" onclick="switchImages('row3')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star3_before_timo.png" data-alt-src="images/star3_after_timo.png" alt="Image 2">
-          <img src="images/star3_before_cedric.png" data-alt-src="images/star3_after_cedric.png" alt="Image 3">
-          <img src="images/star3_before_saeed.png" data-alt-src="images/star3_after_saeed.png" alt="Image 4">
-          <img src="images/star3_before.png" data-alt-src="images/star3_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row4">
-        <button class="button" onclick="switchImages('row4')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star4_before_timo.png" data-alt-src="images/star4_after_timo.png" alt="Image 2">
-          <img src="images/star4_before_cedric.png" data-alt-src="images/star4_after_cedric.png" alt="Image 3">
-          <img src="images/star4_before_saeed.png" data-alt-src="images/star4_after_saeed.png" alt="Image 4">
-          <img src="images/star4_before.png" data-alt-src="images/star4_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row5">
-        <button class="button" onclick="switchImages('row5')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star5_before_timo.png" data-alt-src="images/star5_after_timo.png" alt="Image 2">
-          <img src="images/star5_before_cedric.png" data-alt-src="images/star5_after_cedric.png" alt="Image 3">
-          <img src="images/star5_before_saeed.png" data-alt-src="images/star5_after_saeed.png" alt="Image 4">
-          <img src="images/star5_before.png" data-alt-src="images/star5_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row6">
-        <button class="button" onclick="switchImages('row6')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star6_before_timo.png" data-alt-src="images/star6_after_timo.png" alt="Image 2">
-          <img src="images/star6_before_cedric.png" data-alt-src="images/star6_after_cedric.png" alt="Image 3">
-          <img src="images/star6_before_saeed.png" data-alt-src="images/star6_after_saeed.png" alt="Image 4">
-          <img src="images/star6_before.png" data-alt-src="images/star6_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row7">
-        <button class="button" onclick="switchImages('row7')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star7_before_timo.png" data-alt-src="images/star7_after_timo.png" alt="Image 2">
-          <img src="images/star7_before_cedric.png" data-alt-src="images/star7_after_cedric.png" alt="Image 3">
-          <img src="images/star7_before_saeed.png" data-alt-src="images/star7_after_saeed.png" alt="Image 4">
-          <img src="images/star7_before.png" data-alt-src="images/star7_after.png" alt="Image 5">
-        </div>
-      </div>
-
-
-      <div class="row" data-row-id="row8">
-        <button class="button" onclick="switchImages('row8')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star8_before_timo.png" data-alt-src="images/star8_after_timo.png" alt="Image 2">
-          <img src="images/star8_before_cedric.png" data-alt-src="images/star8_after_cedric.png" alt="Image 3">
-          <img src="images/star8_before_saeed.png" data-alt-src="images/star8_after_saeed.png" alt="Image 4">
-          <img src="images/star8_before.png" data-alt-src="images/star8_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row9">
-        <button class="button" onclick="switchImages('row9')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star9_before_timo.png" data-alt-src="images/star9_after_timo.png" alt="Image 2">
-          <img src="images/star9_before_cedric.png" data-alt-src="images/star9_after_cedric.png" alt="Image 3">
-          <img src="images/star9_before_saeed.png" data-alt-src="images/star9_after_saeed.png" alt="Image 4">
-          <img src="images/star9_before.png" data-alt-src="images/star9_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row10">
-        <button class="button" onclick="switchImages('row10')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star10_before_timo.png" data-alt-src="images/star10_after_timo.png" alt="Image 2">
-          <img src="images/star10_before_cedric.png" data-alt-src="images/star10_after_cedric.png" alt="Image 3">
-          <img src="images/star10_before_saeed.png" data-alt-src="images/star10_after_saeed.png" alt="Image 4">
-          <img src="images/star10_before.png" data-alt-src="images/star10_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row11">
-        <button class="button" onclick="switchImages('row11')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star11_before_timo.png" data-alt-src="images/star11_after_timo.png" alt="Image 2">
-          <img src="images/star11_before_cedric.png" data-alt-src="images/star11_after_cedric.png" alt="Image 3">
-          <img src="images/star11_before_saeed.png" data-alt-src="images/star11_after_saeed.png" alt="Image 4">
-          <img src="images/star11_before.png" data-alt-src="images/star11_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row12">
-        <button class="button" onclick="switchImages('row12')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star12_before_timo.png" data-alt-src="images/star12_after_timo.png" alt="Image 2">
-          <img src="images/star12_before_cedric.png" data-alt-src="images/star12_after_cedric.png" alt="Image 3">
-          <img src="images/star12_before_saeed.png" data-alt-src="images/star12_after_saeed.png" alt="Image 4">
-          <img src="images/star12_before.png" data-alt-src="images/star12_after.png" alt="Image 5">
-        </div>
-      </div>
-
-
-      <div class="row" data-row-id="row13">
-        <button class="button" onclick="switchImages('row13')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star13_before_timo.png" data-alt-src="images/star13_after_timo.png" alt="Image 2">
-          <img src="images/star13_before_cedric.png" data-alt-src="images/star13_after_cedric.png" alt="Image 3">
-          <img src="images/star13_before_saeed.png" data-alt-src="images/star13_after_saeed.png" alt="Image 4">
-          <img src="images/star13_before.png" data-alt-src="images/star13_after.png" alt="Image 5">
-        </div>
-      </div>
-
-      <div class="row" data-row-id="row14">
-        <button class="button" onclick="switchImages('row14')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star14_before_timo.png" data-alt-src="images/star14_after_timo.png" alt="Image 2">
-          <img src="images/star14_before_cedric.png" data-alt-src="images/star14_after_cedric.png" alt="Image 3">
-          <img src="images/star14_before_saeed.png" data-alt-src="images/star14_after_saeed.png" alt="Image 4">
-          <img src="images/star14_before.png" data-alt-src="images/star14_after.png" alt="Image 5">
-        </div>
-      </div>
-
-
-      <div class="row" data-row-id="row15">
-        <button class="button" onclick="switchImages('row15')">Toggle hot pixels</button>
-        <div class="images-container">
-          <img src="images/star15_before_timo.png" data-alt-src="images/star15_after_timo.png" alt="Image 2">
-          <img src="images/star15_before_cedric.png" data-alt-src="images/star15_after_cedric.png" alt="Image 3">
-          <img src="images/star15_before_saeed.png" data-alt-src="images/star15_after_saeed.png" alt="Image 4">
-          <img src="images/star15_before.png" data-alt-src="images/star15_after.png" alt="Image 5">
-        </div>
-      </div> -->
+    
 
 
       <h2 style="text-align: center; margin-top: 20px; font-size: 44px; text-decoration: underline;">Available soon on:</h2>
@@ -1040,38 +890,84 @@
 
             const metricsTable2 = {
             timo: {
-                hotPixels: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // Simplified for clarity
-                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                cleanedEvents: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                hotPixels: [20, 100, 100],
+                hotPixelsPercent: [3.824, 19.954, 23.094],
+                cleanedEvents: [96.176, 80.046, 76.906],
             },
             cedric: {
-                hotPixels: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                hotPixelsPercent: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                cleanedEvents: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                hotPixels: [542, 500, 456],
+                hotPixelsPercent: [58.231, 67.492, 66.347],
+                cleanedEvents: [41.769, 32.508, 33.653],
             },
             alex1: {
-                hotPixels: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                cleanedEvents: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                hotPixels: [92, 92, 92],
+                hotPixelsPercent: [14.564, 18.597, 21.541],
+                cleanedEvents: [85.436, 81.403, 78.459],    
             },
             alex2: {
-                hotPixels: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                hotPixelsPercent: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-                cleanedEvents: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                hotPixels: [7257, 6966, 6572],
+                hotPixelsPercent: [2.571, 4.021, 4.77],
+                cleanedEvents: [97.429, 95.979, 95.23],
             },
             saeed: {
-                hotPixels: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                hotPixelsPercent: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                cleanedEvents: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                hotPixels: [461, 461, 461],
+                hotPixelsPercent: [0.664, 2.147, 0.797],
+                cleanedEvents: [99.336, 97.853, 99.203],
             },
             ours: {
-                hotPixels: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-                hotPixelsPercent: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                cleanedEvents: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                hotPixels: [4127, 4703, 6493],
+                hotPixelsPercent: [1.594, 3.288, 3.926],
+                cleanedEvents: [98.406, 96.712, 96.074],
             },
         };
 
 
+        function changeHotPixelImages(methodName) {
+            const baseImagePath = './images/';
+            const row1Container = document.getElementById('hotPixelRow1');
+            const row2Container = document.getElementById('hotPixelRow2');
+
+            // Ensure row2Container is ready for side-by-side display
+            row2Container.style.display = 'flex';
+            row2Container.style.justifyContent = 'center';
+            row2Container.style.gap = '20px';
+
+            // Mapping methodName to its corresponding file name parts
+            const methodToFileMap = {
+                'Alex1': 'alex_naive',
+                'Alex2': 'alex_neighbor',
+                'Timo': 'timo',
+                'Cedric': 'cedric',
+                'Saeed': 'saeed',
+                'Ours': 'ours'
+            };
+
+            // Clear existing images
+            row1Container.innerHTML = '';
+            row2Container.innerHTML = '';
+
+            const baseName = methodToFileMap[methodName] || methodName.toLowerCase();
+
+            // Define the filenames for the two images based on the method selected
+            const averageImageFilename = `speed_survey_191.930378_-59.688764_average_image_${baseName}.png`;
+            const telescopeImageFilename = `speed_survey_191.930378_-59.688764_telescope_slew_speed_vs_hot_pixels_${baseName}.png`;
+
+            
+            // Create and append the average image
+            let averageImg = document.createElement('img');
+            averageImg.src = `${baseImagePath}${averageImageFilename}`;
+            averageImg.alt = "Average Image";
+            row2Container.appendChild(averageImg);
+
+            // Create and append the telescope image
+            let telescopeImg = document.createElement('img');
+            telescopeImg.src = `${baseImagePath}${telescopeImageFilename}`;
+            telescopeImg.alt = "Telescope Slew Speed vs Hot Pixels";
+            row2Container.appendChild(telescopeImg);
+        }
+
+
+        
         function updateImages(methodName, hotPixels) {
             const baseImagePath = 'images/';
             const afterImages = document.querySelectorAll('.bal-before img'); // Target .bal-after for "after" images
@@ -1092,7 +988,9 @@
         }
 
         window.onload = function() {
-            changeImage('Timo'); // Or the first method you wish to display
+            changeHotPixelImages('Alex2');
+            changeImage('Alex2');
+            
         };
 
         

@@ -404,11 +404,31 @@
     text-align: center;
 }
 
-.method-color {
-    /* This class will be added dynamically to color the table */
-}
+
 .consistentTableStyle {
     width: 900px; /* or any width you prefer */
     border-collapse: collapse;
     margin-top: 20px; /* Adjust based on your layout */
+}
+.imageRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Adjust the spacing between images if needed */
+    margin-bottom: 20px; /* Space between rows */
+}
+
+#hotPixelRow1 img {
+    width: 15%; /* Adjust this value as needed to reduce image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#hotPixelRow2 img {
+    width: 48%; /* Larger size for these images as there are only two */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.imageRow img {
+    border: 1px solid #ccc; /* Adds a border around each image */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a shadow for depth */
 }
