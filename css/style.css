@@ -370,6 +370,10 @@
     background-color: #F44336; /* Red */
     color: #fff;
 }
+#saeed2 {
+    background-color: #16ecc9; /* Red */
+    color: #fff;
+}
 
 #sami {
     background-color: #9C27B0; /* Purple */
@@ -431,4 +435,10 @@
 .imageRow img {
     border: 1px solid #ccc; /* Adds a border around each image */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a shadow for depth */
+}
+#imageSlider img {
+    max-width: 33%; /* Each image can take up to 33% of the slider width */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Line up images horizontally */
+    margin-right: 10px; /* Space between images */
 }
